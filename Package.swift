@@ -20,7 +20,7 @@ let package = Package(
             .testTarget(
                     name: "SkoptsyTests",
                     dependencies: ["Skoptsy"]),
-            .target(name: "Example",
-                    dependencies: [.target(name: "Skoptsy")])
+            .executableTarget(name: "Example",
+                    dependencies: [.target(name: "Skoptsy")]),
         ]
 )
