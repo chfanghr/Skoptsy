@@ -7,6 +7,12 @@
 import Foundation
 import Skoptsy
 
+
+// In this usage example three trails run concurrently for several ticks
+// as determined by the first strong trail before printing "done".
+// The second trail prints a message every third tick and the last trail every second tick.
+
+
 let p = Module { name in
     activity(name.Wait, [name.ticks]) { val in
         exec { val.i = val.ticks as Int }
