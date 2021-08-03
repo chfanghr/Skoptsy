@@ -7,7 +7,9 @@ let package = Package(
         products: [
             .library(
                     name: "Skoptsy",
-                    targets: ["Skoptsy"])
+                    targets: ["Skoptsy"]),
+            .executable(name: "Example",
+                        targets: ["Example"])
         ],
         dependencies: [
         ],
@@ -17,6 +19,8 @@ let package = Package(
                     dependencies: []),
             .testTarget(
                     name: "SkoptsyTests",
-                    dependencies: ["Skoptsy"])
+                    dependencies: ["Skoptsy"]),
+            .target(name: "Example",
+                    dependencies: [.target(name: "Skoptsy")])
         ]
 )
